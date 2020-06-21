@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Chatroom
+{% endblock %}
+
+{% block main %}
+<head>
+    <h1>CHATROOM</h1>
+    <h5>Use this chatroom to interact with your fellow Journal users. Ask questions, post your concerns, this space is for you!</h5>
+</head>
+<body>
+    <form action="/chatroom" method="POST">
+        <input name="message" type="text" style="width: 1000px;" placeholder="your message here">
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+        <br>
+        <br>
+        <table class="table">
+            {% for message in messages %}
+                <tr>
+                    {% if message.is_self %}
+                        <th align="left"><span style="color: #AA0000;">{{ message.sender }}</span></th>
+                    {% else %}
+                        <th align="left">{{ message.sender }}</th>
+                    {% endif %}
+                    <td align="left">{{ message.message }}</td>
+                    <td align="right">{{ message.time }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <a class="navbar-brand" href="/"><img src="static/1216580-200.png"  style="width:75px;height:75px;" ><span class="btn btn-warning" >Back to Explore Page</span></a>
+</body>
+{% endblock %}

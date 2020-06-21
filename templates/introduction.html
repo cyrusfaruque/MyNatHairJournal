@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Learn about the Natural Hair Journey
+
+{% endblock %}
+
+{% block main %}
+<layer id="placeholderlayer"></layer><div id="placeholderdiv"></div>
+
+<script language="JavaScript1.2">
+
+var howOften = 3; //number often in seconds to rotate
+var current = 0; //start the counter at 0
+var ns6 = document.getElementById&&!document.all; //detect netscape 6
+
+// place your images, text, etc in the array elements here
+var items = new Array();
+    items[0]="<a href='index.html' ><img src='/static/static1.squarespace.png' height='300' width='300' border='0' /></a>"; //a linked image
+    items[1]="<a href='index.html'><img src='/static/MARK3163.jpg' height='300' width='500' border='0' /></a>"; //a linked image
+    items[2]="<a href='index.html'><img src='static/lambb-996x500.jpg' height='300' width='500' border='0' /></a>"; //a linked image
+   items[3]="<a href='index.html'><img src='static/images.jpg' height=''300'width='300' border='0' /></a>"; //a linked image
+    items[4]="<a href='index.html'><img src='static/hair.jpg' height='300' width='300' border='0' /></a>"; //a linked image
+    items[5]="<a href='index.html'><img src='static/natural-hair-movement-coming-to-an-end.jpg' height='300' width='500' border='0' /></a>"; //a linked image
+function rotater() {
+    document.getElementById("placeholder").innerHTML = items[current];
+    current = (current==items.length-1) ? 0 : current + 1;
+    setTimeout("rotater()",howOften*1000);
+}
+
+function rotater() {
+    if(document.layers) {
+        document.placeholderlayer.document.write(items[current]);
+        document.placeholderlayer.document.close();
+    }
+    if(ns6)document.getElementById("placeholderdiv").innerHTML=items[current]
+        if(document.all)
+            placeholderdiv.innerHTML=items[current];
+
+    current = (current==items.length-1) ? 0 : current + 1; //increment or reset
+    setTimeout("rotater()",howOften*1000);
+}
+window.onload=rotater;
+//-->
+</script>
+  <h1  style="color:black;">Welcome to the Natural Hair Movement</h1>
+  <h5  style="color:black;"> So you've decided you want to go "natural", what exactly does that mean? Technically it means to be chemical-free (like relaxers and perms).
+  But, ultimately, this movement is about you, as a black woman, allowing yourself to be free with your hair and identity.
+  Because many black people are descendants of slaves, they were taken from their African roots and traditions. Many of these traditions
+  were oriented in hair. Additionally, due to European standards of beauty, the view of typically kinky black hair began to be seen as
+  ugly or unattractive. This racism led to black woman relaxing or chemically straightening their hair to fit beauty standard. Nonetheless,
+  today is a new day! Today we embrace all kinds of hair kinks, and the beauty within the black woman's hair. We invite you to learn more
+  about the nuances of your hair, and be empowered by your natural beauty.</h5>
+  <p></p>
+  <h2  style="color:#800000;"> Happy learning!</h2>
+  <a class="navbar-brand" href="/"><img src="static/1216580-200.png"  style="width:75px;height:75px;" ><span class="btn btn-warning" >Back to Explore Page</span></a>
+{% endblock %}

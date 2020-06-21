@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Join the Natural Hair Journal Community!
+{% endblock %}
+
+{% block main %}
+<form action="/join" method="post">
+         <div class="form-group">
+            <input class="form-control" name="username" placeholder="Username" type="text">
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+</form>
+<center>
+<button class="btn btn-primary" type="submit">Join the community</button>
+</center>
+    <h1><center>
+        Welcome to the Natural Hair Community!
+        </center>
+    </h1>
+{% endblock %}

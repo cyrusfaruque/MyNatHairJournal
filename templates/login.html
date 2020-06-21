@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Please enter your password and username information!
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" size="50" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" size="50" type="password">
+        </div>
+        <center>
+        <button class="btn btn-primary btn-lg" type="submit">Welcome Back!</button>
+        </center>
+    </form>
+{% endblock %}

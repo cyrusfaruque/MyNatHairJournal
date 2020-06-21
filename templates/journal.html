@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Journal Entries
+{% endblock %}
+
+{% block main %}
+    <table class ="table table-striped" bgcolor="#FFFFFF" style ="width:100%">
+      <tr>
+       <p> <th>style</th></p>
+       <p> <th>product</th></p>
+       <p> <th>feelings</th></p>
+      </tr>
+    {% for entry in journalData %}
+      <tr>
+       <td>{{ entry["style"] }}</td>
+       <td>{{ entry["product"] }}</td>
+        <td>{{ entry["feelings"] }}</td>
+      </tr>
+    {% endfor %}
+{% endblock %}

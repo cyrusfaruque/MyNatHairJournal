@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Journal Entry
+{% endblock %}
+
+{% block main %}
+<h1>Complete the Journal Form Below:</h1>
+<img src="https://media.istockphoto.com/photos/young-africa-student-taking-notes-writing-information-symbol-picture-id529649405?k=6&m=529649405&s=612x612&w=0&h=1FFaFb7Ge9DZUkhiN87qYreBGkCdwAYMb0D1zrE4pIk=" style="width:400px;height:250px;">
+<p></p>
+    <form action="/entry" method="post">
+        <div class="form-group">
+            <input class="form-control" name="style" placeholder="Style Tried" size="150" type="text">
+            <p></p>
+         <div class="form-group">
+            <input class="form-control" name="product" placeholder="Products Used" size="150" type="text">
+            <p></p>
+        <div class="form-group">
+            <input class="form-control" name="feelings" placeholder="Ultimate Feelings/results" size="150" type="text">
+            <p></p>
+        </div><form action="/entry" method="post">
+        <center>
+        <p></p>
+        <p></p>
+<h3>"For years I've been advocating the power and pleasure of being grateful. I kept a gratitude journal for a full decade without fail—and urged you all to do the same."  Oprah Winfrey</h3>
+<button class="btn btn-danger btn-lg" type="submit">Add entry!</button>
+</center>
+</form>
+{% endblock %}
